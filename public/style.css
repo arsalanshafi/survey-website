@@ -1,0 +1,30 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+.container-flex{
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    margin-block: 20px;
+}
+
+.w-50{
+    width: 50%;
+}
+
+.inputs{
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: solid black 0.5px;
+}
+
+input::focus{
+    border: solid yellow 0.5px;
+}
+
+.shadow{
+
+    box-shadow:  0 0 10px;
+}
