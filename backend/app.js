@@ -49,6 +49,16 @@ app.get("/surveys",async (req,res)=>{
 })
 
 
+app.put("/survey/updata/:name", async (req,res)=>{
+    // survey.updateOne({name:req.params.name},{$set:req.query})
+    // let temp = await survey.findOne({name:"yair"})
+    await survey.updateOne({ name:req.params.name },{ $set:req.query  });
+    let temp = await survey.findOne({name:req.params.name})
+
+    res.status(200).json(temp);
+})
+
+
 mongoose.connect(connection_string).then(()=>{
     console.log("db is connected");
     app.listen(5000,()=>console.log("app is listening on 5000"));
