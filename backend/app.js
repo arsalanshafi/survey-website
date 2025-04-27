@@ -59,6 +59,12 @@ app.put("/survey/updata/:name", async (req,res)=>{
 })
 
 
+app.delete("/survey/delete/:name", async (req,res)=>{
+    await survey.deleteOne({name:req.params.name});
+    res.status(200).send("deleted");
+
+})
+
 mongoose.connect(connection_string).then(()=>{
     console.log("db is connected");
     app.listen(5000,()=>console.log("app is listening on 5000"));
