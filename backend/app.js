@@ -22,7 +22,7 @@ app.post("/survey",async (req,res)=>{
     // writeFileSync(filePath,`\n name : ${name} , address:${address} , age:${age}`,{flag:"a"})
     try{
 
-        await survey.create(req.body);
+        await survey.insertOne(req.body);
         res.sendFile(resFilePath);
     }
     catch(e){
